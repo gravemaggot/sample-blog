@@ -1,5 +1,4 @@
 class ContactsController < ApplicationController
-
   def new
   end
 
@@ -7,6 +6,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new contact_params
     if @contact.valid? 
       @contact.save
+      redirect_to @contact
     else
       render action: 'new'
     end
@@ -17,5 +17,4 @@ class ContactsController < ApplicationController
   def contact_params
     params.require(:contact).permit(:email, :message)
   end
-
 end
