@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'home/index'
 
   get 'terms' => 'pages#terms'
@@ -9,5 +10,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create]
   end
 
-  root 'articles#index'
+  root to: 'articles#index'
 end
