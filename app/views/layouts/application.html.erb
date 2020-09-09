@@ -5,8 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <a href="/users/sign_in">Войти</a>|<a href="/users/sign_out" data-method="delete">Выйти</a>
-
+    <% if user_signed_in? %>
+      Hello, <%= current_user.username %> | <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Войти", new_user_session_path %> 
+    <% end %>
+    
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
