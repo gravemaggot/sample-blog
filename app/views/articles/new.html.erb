@@ -1,4 +1,4 @@
-<h1>New article</h1>
+<h3>New article</h3>
 
 <%= form_for :article, url: articles_path do |f| %>
     <p>
@@ -11,5 +11,8 @@
     </p>
     <p>
         <%= f.submit %>
+    </p>
+    <p>
+        <%= link_to "К статьям", articles_path%>
     </p>
 <% end%>

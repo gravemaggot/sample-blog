@@ -1,13 +1,13 @@
-<h1><%= @article.title %></h1>
+<h3><%= @article.title %></h3>
 <p>
     <%= @article.text %>
 </p>
 <p>
     <%= link_to "К статьям", articles_path%>
 </p>
-<h3>
+<h4>
     Комментарии:
-</h3>
+</h4>
 <% @article.comments.each do |commment| %>
 <b><%= commment.author %></b> (<%= @article.created_at.inspect %>) написал(а):
 <p>
@@ -15,9 +15,9 @@
 </p>
 <hr />
 <% end %>
-<h3>
+<h4>
     Высказаться:
-</h3>
+</h4>
 <%= form_for ([@article, @article.comments.build]) do |f| %>
     <p>
         <!-- <%= f.label :body %> <br /> -->
