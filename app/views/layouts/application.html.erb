@@ -9,12 +9,6 @@
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <% if user_signed_in? %>
-      Hello, <%= current_user.username %> | <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Войти", new_user_session_path %> 
-    <% end %>
     
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
@@ -23,6 +17,32 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= yield %>
+  	<div class="container">
+      <nav class="navbar navbar-default" role="navigation"> 
+        <div class="navbar-header">
+          <ul class="nav navbar-nav">
+            <li><a class="navbar-brand" href="/">Бложик</a></li>
+            <li>
+              <% if user_signed_in? %>
+                <%= link_to 'Написать статью', new_article_path() %>
+              <% end %>
+          </li>
+          </ul>  
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <% if user_signed_in? %>
+              <li>Hello, <%= current_user.username %></li> 
+              <li><%= link_to "Выйти", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Войти", new_user_session_path %></li> 
+            <% end %> 
+          </ul>
+        </div>  
+      </nav>
+      <div>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

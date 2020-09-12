@@ -1,11 +1,3 @@
-
-<% if user_signed_in? %>
-    <%= link_to 'Написать статью', new_article_path() %>
-<% end %>
-
-<br />
-<br />
-
 <h3>Всякие новости:</h3>
 
 <% @articles.each do |article| %>

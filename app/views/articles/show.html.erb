@@ -2,9 +2,6 @@
 <p>
     <%= @article.text %>
 </p>
-<p>
-    <%= link_to "К статьям", articles_path%>
-</p>
 <h4>
     Комментарии:
 </h4>
@@ -24,6 +21,6 @@
         <%= f.text_area :body %>
     </p>
     <p>
-        <%= f.submit 'Отправить' %>
+        <%= f.submit 'Отправить', class: 'btn btn-primary' %>
     </p>
 <% end%>

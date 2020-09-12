@@ -1,5 +1,4 @@
-<h3>New article</h3>
-
+<h3>Написать статью</h3>
 <%= form_for :article, url: articles_path do |f| %>
     <p>
         <%= f.label :title %> <br />
@@ -10,9 +9,6 @@
         <%= f.text_area :text %>
     </p>
     <p>
-        <%= f.submit %>
-    </p>
-    <p>
-        <%= link_to "К статьям", articles_path%>
+        <%= f.submit 'Опубликовать', class: 'btn btn-primary' %>
     </p>
 <% end%>

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
+# Description/Explanation of Comment class
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: :create 
-  
+  before_action :authenticate_user!, only: :create
   def create
     @article = Article.find(params[:article_id])
     @article.comments.create(comment_params)
@@ -11,9 +13,8 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    pars = params.require(:comment).permit(:body)
-    pars[:author] = current_user.username
-
-    return pars
+    permitted = params.require(:comment).permit(:body)
+    permitted[:author] = current_user.username
+    permitted
   end
 end
