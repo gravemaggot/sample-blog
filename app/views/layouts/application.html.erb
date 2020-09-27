@@ -19,14 +19,29 @@
   <body>
   	<div class="container">
       <nav class="navbar navbar-default" role="navigation"> 
-        <div class="navbar-header">
+        <div class="navbar-header"-->
           <ul class="nav navbar-nav">
             <li><a class="navbar-brand" href="/">Бложик</a></li>
             <li>
               <% if user_signed_in? %>
                 <%= link_to 'Написать статью', new_article_path() %>
               <% end %>
-          </li>
+            </li>
+          </ul>  
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="/contacts">Контакты</a></li>
+          </ul>  
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="/about">О Нас</a></li>
+          </ul>  
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="/terms">Соглашения</a></li>
           </ul>  
         </div>
         <div>
