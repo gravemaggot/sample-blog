@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new contact_params
-    if @contact.valid? 
+    if @contact.valid?
       @contact.save
       redirect_to @contact
     else
