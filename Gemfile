@@ -61,4 +61,5 @@ group :test, :development do
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
   gem 'factory_bot_rails'
+  gem 'database_cleaner'
 end
